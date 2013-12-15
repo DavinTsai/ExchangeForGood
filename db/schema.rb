@@ -15,14 +15,13 @@ ActiveRecord::Schema.define(:version => 20131204024812) do
 
   create_table "uploadproducts", :force => true do |t|
     t.string   "title"
-    t.string   "categoryname"
-    t.integer  "categorynum"
+    t.integer  "cate"
     t.boolean  "condition"
     t.text     "discription"
     t.boolean  "thingstodo"
     t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

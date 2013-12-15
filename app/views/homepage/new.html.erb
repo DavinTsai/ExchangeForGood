@@ -10,11 +10,10 @@
 
 Product name : 
 <%= f.text_field :title %> </br></br>
-Category: <select size=1 name="cat"> </br></br>
-<option value="clothes" selected> clothes
-<option value="shoes"> shoes
-<option value="3C"> 3C
-</select></br></br>
+Category: 
+<%= f.select :cate, [['clothes','1'],['shoes','2'],['3C','3']] %>
+</br></br>
+
 Product condition: <input type=radio value="condition" name="condition"> new <input type=radio value="condition" name="condition"> pre-owned</br></br>
 
 

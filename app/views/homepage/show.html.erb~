@@ -3,6 +3,17 @@
 Owner: <%= @event.user.name %></br></br>
 
 Title: <%= @event.title %></br></br>
+Category: 
+<% case @event.cate %>
+<% when 1 %>
+<%= "Clothes" %>
+<% when 2 %>
+<%= "shoes" %>
+<% when 3 %>
+<%= "3C" %>
+<% end %>
+</br>
+
 Description: <%= simple_format(@event.discription) %></br>
 
 <div id="fb-root"></div>
@@ -14,7 +25,7 @@ Description: <%= simple_format(@event.discription) %></br>
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-like" data-href="http://tw.yahoo.com/" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
 
 <p><%= link_to 'Edit',:action => 'edit' %></p>
 

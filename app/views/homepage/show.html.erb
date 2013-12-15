@@ -3,6 +3,17 @@
 Owner: <%= @event.user.name %></br></br>
 
 Title: <%= @event.title %></br></br>
+Category: 
+<% case @event.cate %>
+<% when 1 %>
+<%= "Clothes" %>
+<% when 2 %>
+<%= "shoes" %>
+<% when 3 %>
+<%= "3C" %>
+<% end %>
+</br></br>
+
 Description: <%= simple_format(@event.discription) %></br>
 
 <div id="fb-root"></div>
