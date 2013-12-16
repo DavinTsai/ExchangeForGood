@@ -1,7 +1,26 @@
-<h1>Exchange For Good</h1>
-<%= paginate @events %>
 
-<p><%= button_to 'Upload products', new_homepage_path %></p>
+  <%= paginate @events %>
+  <%= stylesheet_link_tag    "default", :media => "all" %>
+  <%= stylesheet_link_tag    "fonts", :media => "all" %>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<span><%= image_tag("exchange.png") %></span>
+			<h1><a href="#">Exchange For Good</a></h1>
+			<span>Let your goods more valuable</br></span>
+			<span>Let the world more beautiful</br></span> </div>
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><%= link_to 'homepage', :action => 'index' %></li>
+				<li><%= link_to 'Upload products', new_homepage_path %></li>
+				<li><a href="#" accesskey="3" title="">My Accout</a></li>
+				<li><a href="#" accesskey="4" title="">About Us</a></li>
+				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+	
 <% @events.each do |c| %>
     <%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></br>
 <% end%>

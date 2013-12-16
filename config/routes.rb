@@ -4,7 +4,7 @@ ExchangeForGood::Application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root :to => "homepage#index"
-   resources :homepage
+  resources :homepage
  
   # The priority is based upon order of creation:
   # first created -> highest priority.

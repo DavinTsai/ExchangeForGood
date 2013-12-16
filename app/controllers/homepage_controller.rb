@@ -11,9 +11,11 @@ class HomepageController < ApplicationController
   end
   end
 
+
   def new
   @event = Uploadproduct.new
   end
+
 
 def create
   @event = Uploadproduct.new(params[:uploadproduct])
@@ -45,6 +47,8 @@ end
   end
   flash[:notice] = "event was successfully updated"
   end
+
+
 
   def destroy
   @event = Uploadproduct.find(params[:id])

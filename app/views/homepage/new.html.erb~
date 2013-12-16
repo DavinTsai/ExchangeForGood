@@ -8,21 +8,24 @@
       </ul>
 <% end %>
 
-Product name : 
+<b> Product name : </b> 
 <%= f.text_field :title %> </br></br>
-Category: 
+<b> Category:</b>  
 <%= f.select :cate, [['clothes','1'],['shoes','2'],['3C','3']] %>
-</br>
+</br></br>
 
-Product condition: <input type=radio value="condition" name="condition"> new <input type=radio value="condition" name="condition"> pre-owned</br></br>
-
-
-Upload picture<input type=file value="upload"></br></br>
+<b> Product condition: </b> <input type=radio value="condition" name="condition"> new <input type=radio value="condition" name="condition"> pre-owned</br></br>
 
 
-Discription:</br>
+<p>
+     <b> Upload picture: </b><br/>
+    <%= f.file_field :pic %></b><br/>
+  </p>
+
+
+<b> Discription:</b> </br>
  <%= f.text_area :discription, size: "55x10" %> </br></br>
-How to get it:</br>
+<b> How to get it:</b> </br>
 <input type=radio value="對應值一" name="howtoget"> One day volunteer in elementary school</br>
 <input type=radio value="對應值二" name="howtoget"> Join the beach clean activity in 12/30</br>
 <input type=radio value="對應值三" name="howtoget"> Donate 1000$ NTD for charity</br></br>

@@ -12,7 +12,7 @@ Category:
 <% when 3 %>
 <%= "3C" %>
 <% end %>
-</br>
+</br></br>
 
 Description: <%= simple_format(@event.discription) %></br>
 
