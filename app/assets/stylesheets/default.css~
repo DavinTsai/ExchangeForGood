@@ -55,7 +55,7 @@
 	.container
 	{
 		margin: 0px auto;
-		width: 1200px;
+		width: 1000px;
 	}
 	
 
@@ -320,7 +320,7 @@
 	#header-wrapper
 	{
 		overflow: hidden;
-		padding: 5em 0em;
+		padding: 2em 0em;
 		background: #B03500 url(images/overlay.png) repeat;
 	}
 
@@ -334,7 +334,7 @@
 
 	#logo
 	{
-		padding: 5em 0em;
+		padding: 1em 0em;
 		text-align: center;
 	}
 	
@@ -407,7 +407,7 @@
 		font-weight: 600;
 		text-transform: uppercase;
 		outline: 0;
-		color: black;
+		color: #FFF;
 	}
 	
 	#menu li:hover a, #menu li.active a, #menu li.active span

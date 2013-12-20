@@ -1,4 +1,4 @@
-<h1>Exchange For Good_New</h1>
+<h1>Exchange For Good_New</h1></br>
 <%= form_for @event, :url => { :controller => 'homepage', :action => 'create' } do |f| %>
 <% if @event.errors.any? %>
       <ul>
@@ -29,6 +29,6 @@
 <input type=radio value="對應值一" name="howtoget"> One day volunteer in elementary school</br>
 <input type=radio value="對應值二" name="howtoget"> Join the beach clean activity in 12/30</br>
 <input type=radio value="對應值三" name="howtoget"> Donate 1000$ NTD for charity</br></br>
-<%= f.hidden_field :user_id, :value=>current_user.id %>
+<%= f.hidden_field :user_id %>
 <%= f.submit "Submit" %>
 <% end %>

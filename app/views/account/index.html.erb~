@@ -1,0 +1,13 @@
+  <%= paginate @events %>
+  <%= stylesheet_link_tag    "default", :media => "all" %>
+  <%= stylesheet_link_tag    "fonts", :media => "all" %>
+
+<div id="header-wrapper">
+	<div id="header" class="container">
+<h1>You got it!</h1>
+
+</div>
+
+
+</div>
+
