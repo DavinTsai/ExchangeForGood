@@ -30,13 +30,25 @@ Description: <%= simple_format(@event.discription) %></br>
 
 <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=484650381632246";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-comments" data-href="http://www.nthu.edu.tw/" data-numposts="5" data-colorscheme="light"></div>
+
+
 <% if current_user.id==@event.user.id %>
 
 <p><%= link_to 'Edit',:action => 'edit' %></p>
 <p><%= link_to 'Delete',homepage_path(@event.id), :method => :delete ,:confirm => 'Are you sure?' %></p>
 
 <% else %>
-<p><%= button_to 'I want this', :controller => "account", :action => 'index' %></p>
+<p><%= button_to 'I want this', :controller => "account", :action => 'index' ,:confirm => 'Are you sure?' %></p>
 <% end %>
 
 
