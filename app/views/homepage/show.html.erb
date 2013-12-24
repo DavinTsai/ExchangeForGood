@@ -42,6 +42,9 @@ Description: <%= simple_format(@event.discription) %></br>
 <div class="fb-comments" data-href="http://www.cc.nthu.edu.tw/bin/home.php" data-numposts="5" data-colorscheme="light"></div>
 
 
+
+
+
 <% if current_user.id==@event.user.id %>
 
 <p><%= link_to 'Edit',:action => 'edit' %></p>

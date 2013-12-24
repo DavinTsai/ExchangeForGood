@@ -24,11 +24,39 @@
 
 
 <b> Discription:</b> </br>
- <%= f.text_area :discription, size: "55x10" %> </br></br>
+ <%= f.text_area :discription, size: "5x5" %> </br></br>
 <b> How to get it:</b> </br>
 <input type=radio value="對應值一" name="howtoget"> One day volunteer in elementary school</br>
 <input type=radio value="對應值二" name="howtoget"> Join the beach clean activity in 12/30</br>
 <input type=radio value="對應值三" name="howtoget"> Donate 1000$ NTD for charity</br></br>
+
+
+<div>1<input type="text" name="T1"></div>  
+<span id="fieldSpace"></span>  
+<a href="javascript:" onclick="addField()">add column</a>
+<a href="javascript:" onclick="delField()">delete column</a> </br></br>
+<input type="reset" value="Reset"> <%= f.submit "Submit" %>
+
+<script>  
+var countMin = 1;  
+var countMax = 5; 
+var commonName = "T"; 
+var count = countMin;  
+function addField() {  
+if(count == countMax)  
+alert("Maximum of "+countMax+" column.");  
+else      
+document.getElementById("fieldSpace").innerHTML += "<div>" + (++count) + '<input type="text" name="' + commonName + count + '"></div>';   
+} 
+function delField() { 
+if (count > countMin) { 
+var fs = document.getElementById("fieldSpace");  
+fs.removeChild(fs.lastChild); 
+count--; 
+} else { 
+alert("No column can delete"); 
+}    
+} 
+</script>
 <%= f.hidden_field :user_id, :value=>current_user.id %>
-<%= f.submit "Submit" %>
 <% end %>

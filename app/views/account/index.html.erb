@@ -1,5 +1,11 @@
 
 
 <h1>You got it!</h1>
+  <%= paginate @events %>
 
-
+<div>
+<% @events.each do |c| %>
+    <%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></br>
+    <%= link_to( image_tag(c.pic.url(:medium)), :controller => 'homepage', :action => 'show', :id => "#{c.id}")%></br>
+</div>
+<%end%>

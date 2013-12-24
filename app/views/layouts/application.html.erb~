@@ -15,9 +15,9 @@
 <div id="menu">
 	<ul>
   <% if current_user %>
-				<li><%= link_to 'Homepage', :controller => "home",:action => 'index' %></li>
+				<li><%= link_to 'Homepage', :controller => "homepage",:action => 'index' %></li>
 				<li><%= link_to 'Upload products', new_homepage_path %></li>
-				<li><a href="#" accesskey="3" title="">My Account</a></li>
+				<li><%= link_to 'Myaccount', :controller => "account",:action => 'index' %></li>
 				<li><a href="#" accesskey="4" title="">About Us</a></li>
     <li><%= link_to('Log out', destroy_user_session_path, :method => :delete) %></li>
     <li><%= link_to('Modify password', edit_registration_path(:user)) %></li>
