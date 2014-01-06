@@ -1,0 +1,24 @@
+<h1>Add Activity_New</h1></br>
+<%= form_for @act, :url => { :controller => 'activity', :action => 'create' } do |f| %>
+
+<b> Activity name : </b> 
+<%= f.text_field :title %> </br></br>
+
+<b> Date : </b> 
+<%= f.text_field :date %> </br></br>
+
+<b> Time : </b> 
+<%= f.text_field :time %> </br></br>
+
+<b> Address : </b> 
+<%= f.text_field :address %> </br></br>
+
+<b> Phone : </b> 
+<%= f.text_field :phone %> </br></br>
+
+<b> Detail : </b> 
+<%= f.text_area :description %> </br></br>
+
+<input type="reset" value="Reset"> <%= f.submit "Submit" %>
+
+<%end%>

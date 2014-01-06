@@ -1,0 +1,19 @@
+class ActivityController < ApplicationController
+
+def index
+  @act = Activity.all
+  end
+
+  def new
+  @act = Activity.new
+  end
+
+def create
+  @act = Activity.new(params[:activity])
+  @act.save
+    redirect_to :controller => :homepage, :action => :new
+  
+end
+
+
+end

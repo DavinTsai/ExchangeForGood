@@ -1,5 +1,5 @@
 class HomepageController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :only => [:new, :edit, :create, :update, :destroy]
 
   def index
   @events = Uploadproduct.page(params[:page]).per(10)
@@ -14,6 +14,7 @@ class HomepageController < ApplicationController
 
   def new
   @event = Uploadproduct.new
+  @act = Activity.includes(:uploadproduct_activityships).where("uploadproduct_activityship.uploadproduct_id=?",@event.id)
   end
 
 
