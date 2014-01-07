@@ -4,17 +4,21 @@
 
 
 fieldset {
+	text-align: center;	
 	position:relative;
 	padding:30px;
 	margin-bottom:10px;
 	width: 500px;
-	border-radius: 8px;
+	border-radius: 10px;
 	box-shadow:3px 3px 10px #666;
-        display: inline-block;
+	display: inline-block;
 	vertical-align: top;
-	}
-legend {
 	
+	}
+
+legend {
+	margin-left: 0.50em;	
+	text-align: center;	
 	position:absolute;left:60px;top:-51px;
 	padding:5px 10px;
 	background-color:#4F709F;
@@ -25,4 +29,30 @@ legend {
 
 	}
 
+fieldsett {
+	text-align: center;	
+	position:relative;
+	padding:30px;
+	margin-bottom:50px;
+	width: 1000px;
+	border-radius: 50px;
+	box-shadow:3px 3px 10px #666;
+	display: inline-block;
+	vertical-align: top;
+	left:100px;
+	}
 
+legendd {
+	margin-left: 0.50em;	
+	text-align: center;	
+	position:absolute;
+		left:400px;
+	top:-45px;
+	padding:15px 15px;
+	background-color:#4F709F;
+	color:#FFF;
+	border-radius:3px;
+	box-shadow:2px 2px 4px #666;
+
+
+	}

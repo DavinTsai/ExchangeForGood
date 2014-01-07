@@ -18,18 +18,20 @@
 
 </br><b><%= f.label 'Product name :' %></b>
 <%= f.text_field :title %> </br></br>
+
+
 <b> <%= f.label 'Category :' %></b>  
 <%= f.select :cate, [['clothes','1'],['shoes','2'],['3C','3']] %>
 </br>
 
-</br><b><%= f.label 'Product Condition :' %></b>
+<b><%= f.label 'Product Condition :' %></b>
 <%= f.select :condition, [['new','1'],['pre-owned','2']] %>
 </br>
 
 <p>
-     <b> <%= f.label 'Upload picture :' %> </b>
-    <%= f.file_field :pic %></b><br/>
-  </p>
+<b> <%= f.label 'Upload picture :' %> </b>
+<%= f.file_field :pic %></b><br/>
+</p>
 
 
 <b> <%= f.label 'Discription :' %></b> 

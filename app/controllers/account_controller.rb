@@ -1,7 +1,8 @@
 class AccountController < ApplicationController
 
   def index
-  @events = Uploadproduct.page(params[:page]).per(10)
+  @events = Uploadproduct.includes(:user).where("users.id=?",current_user.id)
+
   respond_to do |format|
     format.html # index.html.erb
     format.xml { render :xml => @events.to_xml }

@@ -57,5 +57,9 @@ end
   flash[:alert] = "event was successfully deleted"
   end
 
+  def introduce
+  @event = Uploadproduct.all
+  end
+
 
 end

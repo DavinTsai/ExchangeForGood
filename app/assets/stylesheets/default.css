@@ -5,16 +5,24 @@
 	
 	body
 	{
-		margin: 0px;
-		padding: 0px;
-		background: #00838C;
-		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 12pt;
-		font-weight: 400;
-		color: #000000;
+		height: 100%;
+               font-family: 'Open Sans', sans-serif;
+	font-size:16px;
+	line-height:1.75em;
+	
+	background: #232323 url('default-bg.jpg') center center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 	}
 	
 	
+	#header-wrap,
+	#main-wrap,
+	#footer-wrap
+	{
+      	  width:100%;
+			margin:0 auto;
+		}
 	h1, h2, h3
 	{
 		margin: 0;
@@ -54,10 +62,13 @@
 
 	.container
 	{
-		margin: 0px auto;
-		width: 900px;
+		margin: 0 auto;
+		width:960px;
+		
 	}
 	
+
+
 
 /*********************************************************************************/
 /* Form Style                                                                    */
@@ -349,11 +360,16 @@
 	{
 		overflow: hidden;
 		padding: 3em 0em;
-		background: #B03500 url(images/overlay.png) repeat;
+		/*background: #B03500 url(images/overlay.png) repeat; */
+		background: transparent url('default-bg.jpg') center center no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		
 	}
 
 	#header
 	{
+	
 	}
 
 /*********************************************************************************/

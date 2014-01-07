@@ -1,17 +1,23 @@
+<html>
 
-<h1>You got it!</h1>
-  <%= paginate @events %>
+<body>
+
 <div id="header" class="container">
-
-<h1><span>My product</br></span></h1>
-
+<h1><span>Product I Upload</br></br></span></h1>
 </div>
+
 <% @events.each do |c| %>
 <div id="products">
-<% if current_user.id==@event.user.id %>
-    <%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></br>
+  <div id="word"> <try> <%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></try></br></div>
     <%= link_to( image_tag(c.pic.url(:medium)), :controller => 'homepage', :action => 'show', :id => "#{c.id}")%></br>
 </div>
-
-
 <%end%>
+
+
+<div id="header" class="container">
+<h1><span>Product I Choose</br></br></span></h1>
+
+</div>
+<body>
+
+</html>

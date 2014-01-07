@@ -1,11 +1,19 @@
-// Place all the styles related to the account controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// assets/stylesheets/account.css
+
+
 #products {
 width: 300px;
 display: inline-block;
 vertical-align: top;
-*display: inline;
 *zoom: 1;
-height : 400px
+height : 350px;
+border:solid white;
+text-align: center;
+
+	font-family: 'trebuchet MS', sans-serif;
+	color: #F22424;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 0pt;
 }

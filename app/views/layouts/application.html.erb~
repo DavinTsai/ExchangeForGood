@@ -3,7 +3,7 @@
 <head>
   <title>ExchangeForGood</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= stylesheet_link_tag    "default" %>
+  <%= stylesheet_link_tag    "default", :media => "all" %>
   <%= stylesheet_link_tag    "fonts", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -18,7 +18,7 @@
 				<li><%= link_to 'Homepage', :controller => "homepage",:action => 'index' %></li>
 				<li><%= link_to 'Upload products', new_homepage_path %></li>
 				<li><%= link_to 'My account', :controller => "account",:action => 'index' %></li>
-				<li><a href="#" accesskey="4" title="">About Us</a></li>
+				<li><%= link_to 'About us', :controller => "homepage" ,:action => 'introduce' ,:method=>:get%></li>
     <li><%= link_to('Log out', destroy_user_session_path, :method => :delete) %></li>
     <li><%= link_to('Modify password', edit_registration_path(:user)) %></li>
   <% else %>

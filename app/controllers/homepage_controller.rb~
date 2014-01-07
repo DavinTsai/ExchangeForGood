@@ -14,7 +14,6 @@ class HomepageController < ApplicationController
 
   def new
   @event = Uploadproduct.new
-  @act = Activity.new
   end
 
 
@@ -56,6 +55,10 @@ end
   @event.destroy
   redirect_to :action => :index
   flash[:alert] = "event was successfully deleted"
+  end
+
+  def introduce
+
   end
 
 

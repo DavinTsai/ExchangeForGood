@@ -1,7 +1,9 @@
 
 <fieldset><legend><h2>Product Information</h2></legend>
+Product name: <%= @event.title %></br></br>
+
 Owner: <%= @event.user.name %></br></br>
-Title: <%= @event.title %></br></br>
+
 Category :
 <% case @event.cate %>
 <% when 1 %>
@@ -14,19 +16,17 @@ Category :
 </br></br>
 
 Condition :
-<% case @event.condition %>
-<% when 1 %>
+<% if @event.condition==1 %>
 <%= "New" %>
-<% when 2 %>
+<% else %>
 <%= "Pre-owned" %>
 <% end %>
 </br></br>
 
 
 
-
 <%= image_tag @event.pic.url(:medium) %>
-<br/></br>
+</br></br>
 
 
 
@@ -59,7 +59,13 @@ Detail :</br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
 <p><%= link_to 'Delete',homepage_path(@event.id), :method => :delete ,:confirm => 'Are you sure?' %></p>
 
 <% else %>
-<p><%= button_to 'I want this', :controller => "account", :action => 'index' ,:confirm => 'Are you sure?' %></p>
+
+<%= form_for @event , :url => { :controller => 'account', :action => 'index' } do |f| %>
+<%= f.submit "I want this", :confirm => 'Are you sure?' %></br>
+
+<% end %>
+
+
 <% end %>
 
 
