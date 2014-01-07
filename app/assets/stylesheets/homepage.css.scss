@@ -10,10 +10,11 @@ fieldset {
 	width: 500px;
 	border-radius: 8px;
 	box-shadow:3px 3px 10px #666;
-
-
+        display: inline-block;
+	vertical-align: top;
 	}
 legend {
+	
 	position:absolute;left:60px;top:-51px;
 	padding:5px 10px;
 	background-color:#4F709F;
@@ -23,3 +24,5 @@ legend {
 
 
 	}
+
+

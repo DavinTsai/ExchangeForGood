@@ -3,15 +3,19 @@ class CreateUploadproducts < ActiveRecord::Migration
     create_table :uploadproducts do |t|
         t.integer :uploadproduct_id
 	t.string :title
-	
         t.integer :cate
 	t.boolean :condition
 	t.text :discription
-	t.boolean :thingstodo
+        t.string :atitle
+        t.string :date
+        t.string :time
+        t.string :address
+        t.string :phone
+        t.text :adescription
+
 
         t.references :user
-        t.references :activity
-        t.references :uploadproduct_activityship
+
 
       t.timestamps
     end

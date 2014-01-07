@@ -8,7 +8,7 @@
 </div>
 <% @events.each do |c| %>
 <div id="products">
-
+<%# if current_user.id==@event.user.id %>
     <%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></br>
     <%= link_to( image_tag(c.pic.url(:medium)), :controller => 'homepage', :action => 'show', :id => "#{c.id}")%></br>
 </div>

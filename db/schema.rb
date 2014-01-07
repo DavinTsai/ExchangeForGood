@@ -11,32 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131229112444) do
+ActiveRecord::Schema.define(:version => 20131224084042) do
 
   create_table "accounts", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "activities", :force => true do |t|
-    t.integer  "activity_id"
-    t.string   "title"
-    t.string   "date"
-    t.string   "time"
-    t.string   "address"
-    t.string   "phone"
-    t.text     "description"
-    t.integer  "uploadproduct_id"
-    t.integer  "uploadproduct_activityship_id"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-  end
-
-  create_table "uploadproduct_activityships", :force => true do |t|
-    t.integer  "uploadproduct_id"
-    t.integer  "activity_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
   end
 
   create_table "uploadproducts", :force => true do |t|
@@ -45,12 +24,15 @@ ActiveRecord::Schema.define(:version => 20131229112444) do
     t.integer  "cate"
     t.boolean  "condition"
     t.text     "discription"
-    t.boolean  "thingstodo"
+    t.string   "atitle"
+    t.string   "date"
+    t.string   "time"
+    t.string   "address"
+    t.string   "phone"
+    t.text     "adescription"
     t.integer  "user_id"
-    t.integer  "activity_id"
-    t.integer  "uploadproduct_activityship_id"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "pic_file_name"
     t.string   "pic_content_type"
     t.integer  "pic_file_size"

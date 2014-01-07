@@ -1,7 +1,6 @@
 <h1>Exchange For Good_New</h1></br></br>
 
 
-
 <%= form_for @event , :url => { :controller => 'homepage', :action => 'create' } do |f| %>
 
 <% if @event.errors.any? %>
@@ -38,52 +37,30 @@
 
 
 
-<b> How to get it:</b> </br>
+<fieldset>
+<legend><h2>How To Get It</h2></legend>
+</br><b><%= f.label 'Activity name :' %></b>
+<%= f.text_field :atitle %> </br></br>
 
+</br><b><%= f.label 'Date :' %></b>
+<%= f.text_field :date %> </br></br>
 
-<%# @act.each do |c| %>
-    
-    <%#=  c.title %></br>
-	
-<%# end%>
+</br><b><%= f.label 'Time :' %></b>
+<%= f.text_field :time %> </br></br>
 
-<%= link_to 'Add new activity', :controller => "activity",:action => 'new' %></br></br>
+</br><b><%= f.label 'Address :' %></b>
+<%= f.text_field :address %> </br></br>
 
+</br><b><%= f.label 'Phone :' %></b>
+<%= f.text_field :phone %> </br></br>
 
+<b> <%= f.label 'Detail :' %></b> 
+ <%= f.text_area :adescription, size: "5x5" %> </br></br>
+</fieldset>
 
+<input type="reset" value="Reset"> <%= f.submit "Submit" %></br>
 
-
-
-
-<div>1<input type="text" name="T1"></div>  
-<span id="fieldSpace"></span>  
-<a href="javascript:" onclick="addField()">add column</a>
-<a href="javascript:" onclick="delField()">delete column</a> </br></br>
-<input type="reset" value="Reset"> <%= f.submit "Submit" %>
-<script>  
-var countMin = 1;  
-var countMax = 5; 
-var commonName = "T"; 
-var count = countMin;  
-function addField() {  
-if(count == countMax)  
-alert("Maximum of "+countMax+" column.");  
-else      
-document.getElementById("fieldSpace").innerHTML += "<div>" + (++count) + '<input type="text" name="' + commonName + count + '"></div>';   
-} 
-function delField() { 
-if (count > countMin) { 
-var fs = document.getElementById("fieldSpace");  
-fs.removeChild(fs.lastChild); 
-count--; 
-} else { 
-alert("No column can delete"); 
-}    
-} 
-</script>
-
-
-<%= f.hidden_field :user_id, :value=>current_user.id %>
+<div id="button"><%= f.hidden_field :user_id, :value=>current_user.id %></div>
 
 <% end %>
 

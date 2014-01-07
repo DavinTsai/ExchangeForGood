@@ -14,7 +14,6 @@ class HomepageController < ApplicationController
 
   def new
   @event = Uploadproduct.new
-  @act = Activity.includes(:uploadproduct_activityships).where("uploadproduct_activityship.uploadproduct_id=?",@event.id)
   end
 
 

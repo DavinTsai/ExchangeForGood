@@ -10,6 +10,7 @@ class CreateActivities < ActiveRecord::Migration
       t.text :description
 	
       t.references :uploadproduct
+      t.references :uploadproduct_activityship
 
       t.timestamps
     end

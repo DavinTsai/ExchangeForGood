@@ -1,7 +1,5 @@
-<h1>Exchange For Good_Show</h1>
 
-TEST: <%= @event.activity.title %>
-
+<fieldset><legend><h2>Product Information</h2></legend>
 Owner: <%= @event.user.name %></br></br>
 Title: <%= @event.title %></br></br>
 Category: 
@@ -14,12 +12,44 @@ Category:
 <%= "3C" %>
 <% end %>
 </br></br>
-
 <%= image_tag @event.pic.url(:medium) %>
 <br/></br>
-
-
 Description: <%= simple_format(@event.discription) %></br>
+</fieldset>
+
+
+
+
+<fieldset>
+<legend><h2>How To Get It</h2></legend>
+
+Activity name : <%= @event.atitle %></br></br>
+Date : <%= @event.date %></br></br>
+Time : <%= @event.time %></br></br>
+Address : <%= @event.address %></br></br>
+Phone : <%= @event.phone %></br></br>
+Detail :</br> <fieldset><%= @event.adescription %></fieldset></br></br>
+
+</fieldset>
+
+
+
+
+
+<% if current_user.id==@event.user.id %>
+
+<p><%= link_to 'Edit',:action => 'edit' %></p>
+<p><%= link_to 'Delete',homepage_path(@event.id), :method => :delete ,:confirm => 'Are you sure?' %></p>
+
+<% else %>
+<p><%= button_to 'I want this', :controller => "account", :action => 'index' ,:confirm => 'Are you sure?' %></p>
+<% end %>
+
+
+<p><%= button_to 'Back to index',:action => 'index' %></p>
+
+
+
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -46,16 +76,4 @@ Description: <%= simple_format(@event.discription) %></br>
 
 
 
-
-<% if current_user.id==@event.user.id %>
-
-<p><%= link_to 'Edit',:action => 'edit' %></p>
-<p><%= link_to 'Delete',homepage_path(@event.id), :method => :delete ,:confirm => 'Are you sure?' %></p>
-
-<% else %>
-<p><%= button_to 'I want this', :controller => "account", :action => 'index' ,:confirm => 'Are you sure?' %></p>
-<% end %>
-
-
-<p><%= button_to 'Back to index',:action => 'index' %></p>
 
