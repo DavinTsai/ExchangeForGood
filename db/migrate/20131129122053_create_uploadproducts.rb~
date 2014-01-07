@@ -6,7 +6,6 @@ class CreateUploadproducts < ActiveRecord::Migration
         t.integer :cate
 	t.boolean :condition
 	t.text :discription
-
         t.string :atitle
         t.string :date
         t.string :time

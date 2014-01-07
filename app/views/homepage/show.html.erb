@@ -2,7 +2,7 @@
 <fieldset><legend><h2>Product Information</h2></legend>
 Owner: <%= @event.user.name %></br></br>
 Title: <%= @event.title %></br></br>
-Category: 
+Category :
 <% case @event.cate %>
 <% when 1 %>
 <%= "Clothes" %>
@@ -12,8 +12,19 @@ Category:
 <%= "3C" %>
 <% end %>
 </br></br>
+
+
+
+
+
+
 <%= image_tag @event.pic.url(:medium) %>
 <br/></br>
+
+Condition :
+<%= @event.condition %><br/></br>
+
+
 Description: <%= simple_format(@event.discription) %></br>
 </fieldset>
 
