@@ -13,13 +13,24 @@ Category :
 <% end %>
 </br></br>
 
+Category :
+<% case @event.condition %>
+<% when 1 %>
+<%= "New" %>
+<% when 2 %>
+<%= "Pre-owned" %>
+<% end %>
+</br></br>
 
-Condition :
 
 
 
 <%= image_tag @event.pic.url(:medium) %>
 <br/></br>
+
+
+
+
 Description: <%= simple_format(@event.discription) %></br>
 </fieldset>
 

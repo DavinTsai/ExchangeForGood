@@ -4,7 +4,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem "kaminari"
 gem 'rails', '3.2.14'
-
+gem "builder", '3.0.4'
 gem "paperclip", "~> 2.3"
 
 # Bundle edge Rails instead:
