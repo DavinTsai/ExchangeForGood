@@ -60,7 +60,7 @@ Detail :</br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
 
 <% else %>
 
-<%= form_for @event , :url => { :controller => 'account', :action => 'index' } do |f| %>
+<%= form_for @event , :url => { :controller => 'account', :action => 'update' , :id =>@event.id} do |f| %>
 <%= f.submit "I want this", :confirm => 'Are you sure?' %></br>
 
 <% end %>

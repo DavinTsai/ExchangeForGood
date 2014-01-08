@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(:version => 20131224084042) do
     t.string   "address"
     t.string   "phone"
     t.text     "adescription"
+    t.integer  "whocheck"
+    t.integer  "check"
     t.integer  "user_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false

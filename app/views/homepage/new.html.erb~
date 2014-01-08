@@ -28,6 +28,7 @@
 <%= f.select :condition, [['new','1'],['pre-owned','2']] %>
 </br>
 
+
 <p>
 <b> <%= f.label 'Upload picture :' %> </b>
 <%= f.file_field :pic %></b><br/>
@@ -63,8 +64,7 @@
 
 <input type="reset" value="Reset"> <%= f.submit "Submit" %></br>
 
-<div id="button"><%= f.hidden_field :user_id, :value=>current_user.id %></div>
-
+<%= f.hidden_field :user_id, :value=>current_user.id %>
 <% end %>
 
 

@@ -1,5 +1,5 @@
 class Uploadproduct < ActiveRecord::Base
-  attr_accessible :title, :cate, :discription, :user_id, :pic, :pic_file_name, :pic_content_type, :pic_file_size, :pic_updated_at, :atitle, :date, :time, :address, :phone, :adescription
+  attr_accessible :title, :cate, :discription, :condition, :check, :user_id, :pic, :pic_file_name, :pic_content_type, :pic_file_size, :pic_updated_at, :atitle, :date, :time, :address, :phone, :adescription
 
   belongs_to :user
   belongs_to :accout

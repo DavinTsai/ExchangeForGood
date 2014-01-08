@@ -14,6 +14,10 @@ class CreateUploadproducts < ActiveRecord::Migration
         t.text :adescription
 
 
+	t.integer :whocheck
+	t.integer :check
+
+
         t.references :user
 
 

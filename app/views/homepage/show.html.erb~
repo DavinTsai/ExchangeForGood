@@ -60,8 +60,9 @@ Detail :</br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
 
 <% else %>
 
-<%= form_for @event , :url => { :controller => 'account', :action => 'index' } do |f| %>
-<%= f.submit "I want this" %></br>
+<%= form_for @event , :url => { :controller => 'account', :action => 'update' , :id =>@event.id} do |f| %>
+<%= f.hidden_field :check, :value=> 1 %>
+<%= f.submit "I want this", :confirm => 'Are you sure?' %></br>
 
 <% end %>
 

@@ -6,9 +6,9 @@
 <h1><span>Product I Upload</br></br></span></h1>
 </div>
 
-<% @events.each do |c| %>
+<% @upload.each do |c| %>
 <div id="products">
-  <div id="word"> <try> <%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></try></br></div>
+  <%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></br>
     <%= link_to( image_tag(c.pic.url(:medium)), :controller => 'homepage', :action => 'show', :id => "#{c.id}")%></br>
 </div>
 <%end%>
@@ -16,8 +16,12 @@
 
 <div id="header" class="container">
 <h1><span>Product I Choose</br></br></span></h1>
-
 </div>
-<body>
 
+
+
+
+
+
+</body>
 </html>
