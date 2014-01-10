@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131224084042) do
+ActiveRecord::Schema.define(:version => 20140110104621) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "user_id"
@@ -33,13 +33,30 @@ ActiveRecord::Schema.define(:version => 20131224084042) do
     t.text     "adescription"
     t.integer  "whocheck"
     t.integer  "check"
+    t.text     "feedback"
+    t.integer  "done"
+    t.integer  "whodone"
+    t.string   "pass"
+    t.text     "ownerfeedback"
+    t.string   "dname"
+    t.string   "dphone"
+    t.string   "daddr"
+    t.integer  "sum"
+    t.integer  "count"
+    t.float    "avg"
+    t.integer  "grade"
+    t.integer  "fin"
     t.integer  "user_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "pic_file_name"
     t.string   "pic_content_type"
     t.integer  "pic_file_size"
     t.datetime "pic_updated_at"
+    t.string   "pic0_file_name"
+    t.string   "pic0_content_type"
+    t.integer  "pic0_file_size"
+    t.datetime "pic0_updated_at"
   end
 
   create_table "users", :force => true do |t|

@@ -15,7 +15,7 @@
 	<div id="header" class="container">
 		<div id="logo">
 			<span><%= image_tag("exchange.png") %></span>
-			<h1><a href="#">Exchange For Good</a></h1>
+			<h1><a href="#">Exchange For Good</a></h1></br>
 			<span>Let your goods more valuable</br></span>
 			<span>Let the world more beautiful</br></span> 
 	</div>
@@ -31,6 +31,8 @@
     <br>
    <span><%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></span></br>
     <li><%= link_to( image_tag(c.pic.url(:medium)), :action => 'show', :id => "#{c.id}")%></br></li>
+   How to get it? </br>
+    <%= c.atitle%>
 
 </div>
  <% end%> 	

@@ -4,6 +4,7 @@ class AddPicPaperclip < ActiveRecord::Migration
       add_column :uploadproducts, :pic_content_type, :string
       add_column :uploadproducts, :pic_file_size,    :integer
       add_column :uploadproducts, :pic_updated_at,   :datetime
+
     end
   
     def self.down
@@ -11,5 +12,6 @@ class AddPicPaperclip < ActiveRecord::Migration
      remove_column :uploadproducts, :pic_content_type
      remove_column :uploadproducts, :pic_file_size
      remove_column :uploadproducts, :pic_updated_at
+
    end
 end

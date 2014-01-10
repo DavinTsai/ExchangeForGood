@@ -5,6 +5,15 @@ ExchangeForGood::Application.routes.draw do
   root :to => "homepage#index"
   get "homepage/introduce" => "homepage#introduce"
   get "account/index/:id" => "account#index"
+  get "account/new/:id" => "account#new"
+  get "account/create/:id" => "account#create"
+  get "account/status/:id" => "account#status"
+  get "account/edit/:id" => "account#edit"
+  get "account/update/:id" => "account#update"
+  get "account/want/:id" => "account#want"
+  get "account/pass/:id" => "account#pass"
+  get "account/show/:id" => "account#show"
+
   resources :homepage, :account
  
   # The priority is based upon order of creation:

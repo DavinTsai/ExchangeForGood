@@ -2,29 +2,36 @@
 
 <body>
 
-<div id="header" class="container">
-<h1><span>Product I Upload</br></br></span></h1>
-</div>
+
+
+<%= image_tag("pupload.png") %></br>
 
 <% @upload.each do |c| %>
 <div id="products">
   <%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></br>
-    <%= link_to( image_tag(c.pic.url(:medium)), :controller => 'homepage', :action => 'show', :id => "#{c.id}")%></br>
+    <%= link_to( image_tag(c.pic.url(:medium)), :action => 'status', :id => "#{c.id}")%></br>
 </div>
 <%end%>
 
+</br>
+<%= image_tag("pchoose.png") %></br>
 
-<div id="header" class="container">
-<h1><span>Product I Choose</br></br></span></h1>
-</div>
 <% @choose.each do |c| %>
 <div id="products">
-  <%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></br>
-    <%= link_to( image_tag(c.pic.url(:medium)), :controller => 'homepage', :action => 'show', :id => "#{c.id}")%></br>
+  <%= link_to "#{c.title}", :action => 'new', :id => "#{c.id}" %></br>
+    <%= link_to( image_tag(c.pic.url(:medium)),  :action => 'edit', :id => "#{c.id}")%></br>
 </div>
 <%end%>
 
+</br>
+<%= image_tag("mission.png") %></br>
 
+<% @done.each do |c| %>
+<div id="products">
+  <%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></br>
+    <%= link_to( image_tag(c.pic.url(:medium)),  :action => 'show', :id => "#{c.id}")%></br>
+</div>
+<%end%>
 
 
 

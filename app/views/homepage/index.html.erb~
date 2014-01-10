@@ -1,25 +1,44 @@
-
-  <%= paginate @events %>
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag    "application", :media => "all" %> 
   <%= stylesheet_link_tag    "default", :media => "all" %>
   <%= stylesheet_link_tag    "fonts", :media => "all" %>
+  <%= javascript_include_tag "application" %> 
+  <%= csrf_meta_tags %>
+  <%= paginate @events %>
+</head>
+
+<body>
+
 <div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="logo">
 			<span><%= image_tag("exchange.png") %></span>
-			<h1><a href="#">Exchange For Good</a></h1>
+			<h1><a href="#">Exchange For Good</a></h1></br>
 			<span>Let your goods more valuable</br></span>
-			<span>Let the world more beautiful</br></span> </div>
+			<span>Let the world more beautiful</br></span> 
+	</div>
 		
 
-
-	</div>
-<ul>
-<% @events.each do |c| %>
-    <div id="products">
-    <br>
-    <span><%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></br>
-    <%= link_to( image_tag(c.pic.url(:medium)), :action => 'show', :id => "#{c.id}")%></br>
 </div>
-	
-<% end%>
+	</div>
+
+<ul>
+
+<% @events.each do |c| %> 
+<div id="products">
+    <br>
+   <span><%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></span></br>
+    <li><%= link_to( image_tag(c.pic.url(:medium)), :action => 'show', :id => "#{c.id}")%></br></li>
+   How to get it? </br>
+    <%= c.atitle
+
+</div>
+ <% end%> 	
+
+
 </ul>
+
+</body>
+</html>

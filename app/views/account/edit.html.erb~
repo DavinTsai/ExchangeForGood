@@ -1,0 +1,60 @@
+<h1>Things To do_New</h1></br></br>
+
+<%= form_for @event , :url => { :controller => 'account', :action => 'update' } do |f| %>
+
+
+
+<fieldset>
+<legend><h2>Activity Information</h2></legend>
+
+<b> <%= f.label 'Activity Name :' %> </b> <%= @event.atitle %></br></br>
+<b> <%= f.label 'Date :' %> </b> <%= @event.date %></br></br>
+<b> <%= f.label 'Time :' %> </b> <%= @event.time %></br></br>
+
+<b> <%= f.label 'Address :' %> </b> <%= @event.address %></br></br>
+<div align="center" >
+<div id="map" style="width: 400px; height: 300px"></div></br></br>
+</div>
+
+
+<b> <%= f.label 'Phone :' %> </b><%= @event.phone %></br></br>
+Detail :</br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
+</fieldset>
+
+
+
+<fieldset>
+<legend><h2>What You do</h2></legend>
+
+<b> <%= f.label 'Upload picture :' %> </b>
+<%= f.file_field :pic0 %></b><br/>
+
+<b> <%= f.label '心得 :' %> </b><br/>
+<%= f.text_area :feedback%><br/><br/>
+
+<fieldset>
+<legend><h2>Delivering Information</h2></legend>
+
+<b> <%= f.label 'Upload picture :' %> </b>
+<%= f.text_field :dname %> </br></br>
+
+<b> <%= f.label 'Upload picture :' %> </b>
+<%= f.text_field :dphone %> </br></br>
+
+<b> <%= f.label 'Upload picture :' %> </b>
+<%= f.text_field :daddr %> </br></br>
+
+
+</fieldset>
+
+
+</fieldset>
+
+
+
+
+<%= f.submit "Submit", :confirm => 'Are you sure?' %></br>
+
+
+<% end %>
+

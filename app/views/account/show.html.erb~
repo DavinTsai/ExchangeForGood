@@ -1,0 +1,31 @@
+
+<div align= "center" >
+<fieldset>
+<div align= "center" ><legend><h2>Result</h2></legend></div>
+
+
+
+
+<% if @event.pass == nil %>
+Waiting For Reply
+<% end %>
+
+<%if @event.pass == "yes" %>
+You got it! Thanks for your hardwork.</br>
+<label> Feedback :</label></br>
+<%= @event.ownerfeedback %></br></br>
+<p><%= link_to 'Try Another one', :controller => 'homepage' ,:action => 'index' %></p></br></br>
+<% end %>
+
+<% if @event.pass == "no" %>
+I'm Sorry, You can do better.</br>
+<label> Feedback :</label></br>
+<%= @event.ownerfeedback %></br></br>
+<p><%= link_to 'Try Another one', :controller => 'homepage' ,:action => 'index' %></p></br></br>
+<% end %>
+
+
+</fieldset>
+</div>
+
+

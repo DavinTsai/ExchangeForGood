@@ -16,7 +16,23 @@ class CreateUploadproducts < ActiveRecord::Migration
 
 	t.integer :whocheck
 	t.integer :check
+	t.text :feedback
 
+	t.integer :done
+	t.integer :whodone
+
+	t.string :pass
+	t.text :ownerfeedback
+
+	t.string :dname
+	t.string :dphone
+	t.string :daddr
+
+ 	t.integer :sum
+	t.integer :count
+	t.float :avg
+	t.integer :grade
+	t.integer :fin
 
         t.references :user
 

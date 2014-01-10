@@ -1,4 +1,4 @@
-	html, body
+	html, bodygdefault-bg
 	{
 		height: 100%;
 	}
@@ -10,9 +10,10 @@
 	font-size:16px;
 	line-height:1.75em;
 	
-	background: #232323 url('default-bg.jpg') center center no-repeat;
+	background: #232323 url('blackground.jpg') center center no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
+	
 	}
 	
 	
@@ -359,12 +360,12 @@
 	#header-wrapper
 	{
 		overflow: hidden;
-		padding: 3em 0em;
+		padding: 10% 10%;
 		/*background: #B03500 url(images/overlay.png) repeat; */
-		background: transparent url('default-bg.jpg') center center no-repeat;
+		background: transparent url('default-bg4.jpg') center center no-repeat;
 		background-size: cover;
-		background-attachment: fixed;
-		
+	
+		color: #6F6F6F;
 	}
 
 	#header
@@ -634,7 +635,7 @@
 		text-transform: uppercase;
 		font-size: 1em;
 		color: rgba(0,0,0,0.6);
-	}
+	}reset
 
 	#portfolio .title
 	{
@@ -666,4 +667,36 @@
 	{
 		float: right;
 	}
+
+
+
+
 	
+input[type="reset"]
+{
+  background:url("button.png");
+  overflow: hidden;
+  font-size: 0.9em;
+  width: 180px;	
+  height: 120px;
+border-color: rgba(0,0,0,0);
+font-family: 'Open Sans', sans-serif;
+	font-size:28px;
+	line-height:30em;
+
+}
+
+input[type="submit"]
+{
+  background:url("button.png");
+  width: 180px;	
+  height: 120px;
+position:relative;
+
+font-family: 'Open Sans', sans-serif;
+	font-size:28px;
+	line-height:30em;
+
+border-color: rgba(0,0,0,0);
+	
+}

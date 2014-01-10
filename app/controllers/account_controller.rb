@@ -2,9 +2,9 @@ class AccountController < ApplicationController
 
   def index
  
-
   @upload = Uploadproduct.includes(:user).where("users.id=?",current_user.id)
-  @choose = Uploadproduct.where(:whocheck=> current_user.id, :check=>1)
+  @choose = Uploadproduct.where(:whocheck=> current_user.id, :check=>1, :done => nil)
+  @done = Uploadproduct.where(:whodone=> current_user.id, :done => 1)
 
 
   respond_to do |format|
@@ -13,12 +13,53 @@ class AccountController < ApplicationController
     format.json { render :json => @events.to_json }
     format.atom { @feed_title = "My event list" } # index.atom.builder
   end
+
   end
 
-  def update
+
+
+
+  def want
   @event = Uploadproduct.find(params[:id])
   @event.update_attributes(:check=> 1 , :whocheck => current_user.id)
   redirect_to :action => :index
   end
+
+
+  def edit
+  @event = Uploadproduct.find(params[:id])
+  end
+
+  def update
+      @event = Uploadproduct.find(params[:id])
+      @event.update_attributes(:done=> 1 , :whodone => current_user.id)
+       if @event.update_attributes(params[:uploadproduct])
+           redirect_to :action => :index
+
+    end
+
+  end
+
+
+  def status
+  @event = Uploadproduct.find(params[:id])
+  end
+
+  def pass
+  @event = Uploadproduct.find(params[:id])
+  @event.update_attributes(:fin=> 1)
+  if @event.update_attributes(params[:uploadproduct])
+    redirect_to :action => :index
+  end
+  end
+
+
+  def show
+  @event = Uploadproduct.find(params[:id])
+  end
+
+
+
+
 
 end

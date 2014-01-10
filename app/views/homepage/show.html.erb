@@ -1,10 +1,44 @@
+<HTML>
+<head>
+    <script src="http://maps.google.com/maps?file=api&v=2&key=AIzaSyBkEVkRau1L9bhVsQJfc-9zZdAjgfhPTc0" type="text/javascript"></script>
+        <script type="text/javascript"> 
+        function load() {
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map"));
+            var geocoder = new GClientGeocoder();
+        var address = "<%=@event.address%>"
+        map.addControl(new GSmallMapControl());
+                
+                geocoder.getLatLng(address, function(point) {
+                        if (!point) {
+                          alert('Google Maps 找不到該地址，無法顯示地圖！'); //如果Google Maps無法顯示該地址的警示文字
+                        } else {
+                          map.setCenter(point, 13);
+                          var marker = new GMarker(point);
+                          map.addOverlay(marker);
+                          marker.openInfoWindowHtml("在這裡輸入要顯示在對話框的文字");
+                        }
+                  });
+      }
+    }
+        </script>
+</head>
+<body onload="load()" onunload="GUnload()">
 
-<fieldset><legend><h2>Product Information</h2></legend>
-Product name: <%= @event.title %></br></br>
 
-Owner: <%= @event.user.name %></br></br>
+</br></br>
 
-Category :
+<fieldsetshow><legendshow><h2>Product Information</h2></legendshow>
+<otitle>Product name: </otitle><rtitle><%= @event.title %></rtitle></br></br>
+
+
+<otitle>Owner:</otitle>
+
+<rtitle><%= @event.user.name %></rtitle></br></br>
+
+<otitle>Category :</otitle>
+
+<rtitle>
 <% case @event.cate %>
 <% when 1 %>
 <%= "Clothes" %>
@@ -13,14 +47,14 @@ Category :
 <% when 3 %>
 <%= "3C" %>
 <% end %>
-</br></br>
+</br></br></rtitle>
 
-Condition :
+<otitle>Condition :</otitle>     <rtitle>
 <% if @event.condition==1 %>
 <%= "New" %>
 <% else %>
 <%= "Pre-owned" %>
-<% end %>
+<% end %></rtitle>
 </br></br>
 
 
@@ -31,37 +65,37 @@ Condition :
 
 
 
-Description: <%= simple_format(@event.discription) %></br>
-</fieldset>
+<otitle>Description:</otitle> <rtitle><%= simple_format(@event.discription) %></rtitle></br>
+</fieldsetshow>
 
 
 
 
-<fieldset>
-<legend><h2>How To Get It</h2></legend>
+<fieldsetshow>
+<legendshow><h2>How To Get It</h2></legendshow>
 
-Activity name : <%= @event.atitle %></br></br>
-Date : <%= @event.date %></br></br>
-Time : <%= @event.time %></br></br>
-Address : <%= @event.address %></br></br>
-Phone : <%= @event.phone %></br></br>
-Detail :</br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
+<otitle> Activity name : </otitle><ttitle><%= @event.atitle %></ttitle></br></br>
+<otitle>Date : </otitle><ttitle><%= @event.date %></ttitle></br></br>
+<otitle>Time : </otitle><ttitle><%= @event.time %></ttitle></br></br>
+<otitle>Address : </otitle><ttitle><%= @event.address %></ttitle></br></br>
+<div align="center" > <div id="map" style="width: 400px; height: 300px"></div></br></br> </div>
+<otitle>Phone :</otitle> <ttitle><%= @event.phone %></ttitle></br></br>
+<otitle>Detail :</otitle></br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
+</fieldsetshow>
 
-</fieldset>
 
 
-
+<div align="center">
 
 
 <% if current_user.id==@event.user.id %>
-
-<p><%= link_to 'Edit',:action => 'edit' %></p>
-<p><%= link_to 'Delete',homepage_path(@event.id), :method => :delete ,:confirm => 'Are you sure?' %></p>
+<%= link_to( image_tag("edit.png"), :action => 'edit')%>
+<%= link_to( image_tag("delete.png"),homepage_path(@event.id), :method => :delete ,:confirm => 'Are you sure?' )%>
 
 <% else %>
 
-<%= form_for @event , :url => { :controller => 'account', :action => 'update' , :id =>@event.id} do |f| %>
-<%= f.submit "I want this", :confirm => 'Are you sure?' %></br>
+<%= form_for @event , :url => { :controller => 'account', :action => 'want' , :id =>@event.id} do |f| %>
+<%= f.submit "I want this", :confirm => 'Are you sure?' %>
 
 <% end %>
 
@@ -69,8 +103,8 @@ Detail :</br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
 <% end %>
 
 
-<p><%= button_to 'Back to index',:action => 'index' %></p>
-
+<%= button_to 'Back',:action => 'index' %>
+</div>>
 
 
 
@@ -97,6 +131,7 @@ Detail :</br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
 <div class="fb-comments" data-href="http://www.cc.nthu.edu.tw/bin/home.php" data-numposts="5" data-colorscheme="light"></div>
 
 
-
+</body>
+</html>
 
 
