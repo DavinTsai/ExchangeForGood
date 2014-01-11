@@ -22,6 +22,15 @@
       }
     }
         </script>
+
+<script type="text/javascript" src="http://hunguo.googlepages.com/prototype.js"></script>
+
+<script type="text/javascript" src="http://hunguo.googlepages.com/scriptaculous.js?load=effects"></script>
+
+<script type="text/javascript" src="http://hunguo.googlepages.com/lightbox.js"></script>
+
+
+
 </head>
 <body onload="load()" onunload="GUnload()">
 
@@ -56,6 +65,9 @@
 <%= "Pre-owned" %>
 <% end %></rtitle>
 </br></br>
+
+
+<a href= '<%=@event.pic.url(:medium) %>'  rel="lightbox" >
 
 
 
@@ -94,7 +106,7 @@
 
 <% else %>
 
-<%= form_for @event , :url => { :controller => 'account', :action => 'update' , :id =>@event.id} do |f| %>
+<%= form_for @event , :url => { :controller => 'account', :action => 'want' , :id =>@event.id} do |f| %>
 <%= f.submit "I want this", :confirm => 'Are you sure?' %>
 
 <% end %>

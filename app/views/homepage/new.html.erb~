@@ -20,11 +20,11 @@
 <%= f.text_field :title %> </br></br>
 
 
-<b> <%= f.label 'Category :' %></b>  
+<b> <%= f.label 'Category :' %>
 <%= f.select :cate, [['clothes','1'],['shoes','2'],['3C','3']] %>
 </br>
 
-<b><%= f.label 'Product Condition :' %></b>
+<b><%= f.label 'Product Condition :' %>
 <%= f.select :condition, [['new','1'],['pre-owned','2']] %>
 </br>
 

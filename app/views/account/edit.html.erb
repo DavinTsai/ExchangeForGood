@@ -1,3 +1,32 @@
+<html>
+
+<head>
+    <script src="http://maps.google.com/maps?file=api&v=2&key=AIzaSyAO4fZDiW7ol2S1Xd4R6L5Qgn2bzrVNczI" type="text/javascript"></script>
+        <script type="text/javascript"> 
+        function load() {
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map"));
+            var geocoder = new GClientGeocoder();
+        var address = "<%=@event.address%>"
+        map.addControl(new GSmallMapControl());
+                
+                geocoder.getLatLng(address, function(point) {
+                        if (!point) {
+                          alert('Google Maps can not find the adderss！'); //如果Google Maps無法顯示該地址的警示文字
+                        } else {
+                          map.setCenter(point, 13);
+                          var marker = new GMarker(point);
+                          map.addOverlay(marker);
+                          marker.openInfoWindowHtml("Destination");
+                        }
+                  });
+      }
+    }
+        </script>
+</head>
+
+<body onload="load()" onunload="GUnload()">
+
 <h1>Things To do_New</h1></br></br>
 
 <%= form_for @event , :url => { :controller => 'account', :action => 'update' } do |f| %>
@@ -58,3 +87,6 @@ Detail :</br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
 
 <% end %>
 
+
+</body>
+</html>
