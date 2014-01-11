@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+
+
+
+
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem "kaminari"
@@ -9,6 +13,7 @@ gem "paperclip", "~> 2.3"
 gem "builder", '3.0.4'
 gem "orm_adapter", '0.5.0'
 
+gem 'rails_12factor'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
