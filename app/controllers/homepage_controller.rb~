@@ -2,7 +2,8 @@ class HomepageController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :edit, :create, :update, :destroy]
 
   def index
-  @events = Uploadproduct.page(params[:page]).per(10).where(:done => nil)
+  @test = Uploadproduct.page(params[:page]).per(10)
+  @events = Uploadproduct.page(params[:page]).per(10).where(:check => nil )
   respond_to do |format|
     format.html # index.html.erb
     format.xml { render :xml => @events.to_xml }

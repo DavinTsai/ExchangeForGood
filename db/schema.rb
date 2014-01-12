@@ -19,6 +19,27 @@ ActiveRecord::Schema.define(:version => 20140110104621) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "activities", :force => true do |t|
+    t.integer  "activity_id"
+    t.string   "title"
+    t.string   "date"
+    t.string   "time"
+    t.string   "address"
+    t.string   "phone"
+    t.text     "description"
+    t.integer  "uploadproduct_id"
+    t.integer  "uploadproduct_activityship_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "uploadproduct_activityships", :force => true do |t|
+    t.integer  "uploadproduct_id"
+    t.integer  "activity_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "uploadproducts", :force => true do |t|
     t.integer  "uploadproduct_id"
     t.string   "title"

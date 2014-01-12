@@ -108,8 +108,8 @@ Address : <%= @event.daddr %></br>
   <%= f.radio_button :pass, "yes" %>Pass
   <%= f.radio_button :pass, "no" %>Fail</b>  
 
-<b> <%= f.label 'Grade :' %></b>  
-<%= f.select :grade, [['1','1'],['2','2'],['3','3'],['4','4'],['5','5']] %></b>  
+<b> <%#= f.label 'Grade :' %></b>  
+<%#= f.select :grade, [['1','1'],['2','2'],['3','3'],['4','4'],['5','5']] %></b>  
 
 <b> <%= f.label 'Feedback :' %> </b>
 <%= f.text_area :ownerfeedback %><br/><br/>
