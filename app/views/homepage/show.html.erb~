@@ -11,32 +11,25 @@
                 
                 geocoder.getLatLng(address, function(point) {
                         if (!point) {
-                          alert('Google Maps 找不到該地址，無法顯示地圖！'); //如果Google Maps無法顯示該地址的警示文字
+                          alert('Google Maps can not find the address！'); //如果Google Maps無法顯示該地址的警示文字
                         } else {
                           map.setCenter(point, 13);
                           var marker = new GMarker(point);
                           map.addOverlay(marker);
-                          marker.openInfoWindowHtml("在這裡輸入要顯示在對話框的文字");
+                          marker.openInfoWindowHtml("Destination");
                         }
                   });
       }
     }
         </script>
 
-<script type="text/javascript" src="http://hunguo.googlepages.com/prototype.js"></script>
-
-<script type="text/javascript" src="http://hunguo.googlepages.com/scriptaculous.js?load=effects"></script>
-
-<script type="text/javascript" src="http://hunguo.googlepages.com/lightbox.js"></script>
-
-
 
 </head>
 <body onload="load()" onunload="GUnload()">
 
 
-</br></br>
-
+</br></br></br>
+<div align="center">
 <fieldsetshow><legendshow><h2>Product Information</h2></legendshow>
 <otitle>Product name: </otitle><rtitle><%= @event.title %></rtitle></br></br>
 
@@ -67,10 +60,6 @@
 </br></br>
 
 
-<a href= '<%=@event.pic.url(:medium) %>'  rel="lightbox" >
-
-
-
 <%= image_tag @event.pic.url(:medium) %>
 </br></br>
 
@@ -86,15 +75,15 @@
 <fieldsetshow>
 <legendshow><h2>How To Get It</h2></legendshow>
 
-<otitle> Activity name : </otitle><ttitle><%= @event.atitle %></ttitle></br></br>
-<otitle>Date : </otitle><ttitle><%= @event.date %></ttitle></br></br>
-<otitle>Time : </otitle><ttitle><%= @event.time %></ttitle></br></br>
-<otitle>Address : </otitle><ttitle><%= @event.address %></ttitle></br></br>
+<otitle> Activity name : </otitle><rtitle><%= @event.atitle %></rtitle></br></br>
+<otitle>Date : </otitle><rtitle><%= @event.date %></rtitle></br></br>
+<otitle>Time : </otitle><rtitle><%= @event.time %></rtitle></br></br>
+<otitle>Address : </otitle><rtitle><%= @event.address %></rtitle></br></br>
 <div align="center" > <div id="map" style="width: 400px; height: 300px"></div></br></br> </div>
-<otitle>Phone :</otitle> <ttitle><%= @event.phone %></ttitle></br></br>
+<otitle>Phone :</otitle> <rtitle><%= @event.phone %></rtitle></br></br>
 <otitle>Detail :</otitle></br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
 </fieldsetshow>
-
+</div>
 
 
 <div align="center">
@@ -107,7 +96,7 @@
 <% else %>
 
 <%= form_for @event , :url => { :controller => 'account', :action => 'want' , :id =>@event.id} do |f| %>
-<%= f.submit "I want this", :confirm => 'Are you sure?' %>
+<%= f.submit "I want it", :confirm => 'Are you sure?' %>
 
 <% end %>
 
@@ -116,7 +105,7 @@
 
 
 <%= button_to 'Back',:action => 'index' %>
-</div>>
+</div>
 
 
 

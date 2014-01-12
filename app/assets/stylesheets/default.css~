@@ -1,20 +1,29 @@
-	html, body
+	html, bodygdefault-bg
 	{
 		height: 100%;
 	}
 	
 	body
 	{
-		margin: 0px;
-		padding: 0px;
-		background: #00838C;
-		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 12pt;
-		font-weight: 400;
-		color: #000000;
+		height: 100%;
+               font-family: 'Open Sans', sans-serif;
+	font-size:16px;
+	line-height:1.75em;
+	
+	background: #232323 url('blackground.jpg') center center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	
 	}
 	
 	
+	#header-wrap,
+	#main-wrap,
+	#footer-wrap
+	{
+      	  width:100%;
+			margin:0 auto;
+		}
 	h1, h2, h3
 	{
 		margin: 0;
@@ -54,10 +63,13 @@
 
 	.container
 	{
-		margin: 0px auto;
-		width: 900px;
+		margin: 0 auto;
+		width:960px;
+		
 	}
 	
+
+
 
 /*********************************************************************************/
 /* Form Style                                                                    */
@@ -348,12 +360,17 @@
 	#header-wrapper
 	{
 		overflow: hidden;
-		padding: 3em 0em;
-		background: #B03500 url(images/overlay.png) repeat;
+		padding: 10% 10%;
+		/*background: #B03500 url(images/overlay.png) repeat; */
+		background: transparent url('default-bg4.jpg') center center no-repeat;
+		background-size: cover;
+	
+		color: #6F6F6F;
 	}
 
 	#header
 	{
+	
 	}
 
 /*********************************************************************************/
@@ -405,28 +422,6 @@
 	{ position: absolute; top: 2em; right: 0; }
 
 /*********************************************************************************/
-/* Word                                                                          */
-/*********************************************************************************/
-	#word
-	{
-
-
-	}
-
-
-	#menu try
-	{
-	font-family: 'trebuchet MS', sans-serif;
-	color: #F22424;
-	font-size: 12px;
-	font-weight: bold;
-	text-align: center;
-	letter-spacing: 0pt;
-
-	}
-
-
-/*********************************************************************************/
 /* Menu                                                                          */
 /*********************************************************************************/
 
@@ -468,8 +463,6 @@
 	{
 		color: #FFF;
 	}
-
-
 	
 
 /*********************************************************************************/
@@ -642,7 +635,7 @@
 		text-transform: uppercase;
 		font-size: 1em;
 		color: rgba(0,0,0,0.6);
-	}
+	}reset
 
 	#portfolio .title
 	{
@@ -674,4 +667,36 @@
 	{
 		float: right;
 	}
+
+
+
+
 	
+input[type="reset"]
+{
+  background:url("button.png");
+  overflow: hidden;
+  font-size: 0.9em;
+  width: 180px;	
+  height: 120px;
+border-color: rgba(0,0,0,0);
+font-family: 'Open Sans', sans-serif;
+	font-size:28px;
+	line-height:30em;
+
+}
+
+input[type="submit"]
+{
+  background:url("button.png");
+  width: 180px;	
+  height: 120px;
+position:relative;
+
+font-family: 'Open Sans', sans-serif;
+	font-size:28px;
+	line-height:30em;
+
+border-color: rgba(0,0,0,0);
+	
+}

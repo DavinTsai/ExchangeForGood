@@ -90,6 +90,7 @@
 			
 			form .submit
 			{
+				display: inline-block;
 				margin-top: 2em;
 				background: #B03500;
 				line-height: 1.5em;

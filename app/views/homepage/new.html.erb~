@@ -21,11 +21,15 @@
 
 
 <b> <%= f.label 'Category :' %>
-<%= f.select :cate, [['clothes','1'],['shoes','2'],['3C','3']] %>
+<div align="center">
+<%= f.select :cate, [['Clothe','1'],['Shoes','2'],['3C','3'],['Accessory','4'],['Toy','5'],['Furniture','6'],['Sport','7']] %>
+</div>
 </br>
 
 <b><%= f.label 'Product Condition :' %>
+<div align="center">
 <%= f.select :condition, [['new','1'],['pre-owned','2']] %>
+</div>
 </br>
 
 
@@ -36,13 +40,15 @@
 
 
 <b> <%= f.label 'Discription :' %></b> 
+<div align="center">
  <%= f.text_area :discription, size: "5x5" %> </br></br>
+</div>
 </fieldset>
 
 
 
 <fieldset>
-<legend><h2>How To Get It</h2></legend>
+<div align="center"><legend><h2>How To Get It</h2></legend></div>
 </br><b><%= f.label 'Activity name :' %></b>
 <%= f.text_field :atitle %> </br></br>
 
@@ -59,7 +65,9 @@
 <%= f.text_field :phone %> </br></br>
 
 <b> <%= f.label 'Detail :' %></b> 
+<div align="center">
  <%= f.text_area :adescription, size: "5x5" %> </br></br>
+</div>
 </fieldset>
 </div>
 <div align="center"> <input type="reset" > <%= f.submit "Submit" %></br> </div>

@@ -8,17 +8,19 @@
 
 <% @upload.each do |c| %>
 <div id="products">
-  <%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></br>
+</br>
+  <linkto><%= c.title %></linkto></br>
     <%= link_to( image_tag(c.pic.url(:medium)), :action => 'status', :id => "#{c.id}")%></br>
 </div>
 <%end%>
 
 </br>
-
+<%= image_tag("pchoose.png") %></br>
 
 <% @choose.each do |c| %>
 <div id="products">
-  <%= link_to "#{c.title}", :action => 'new', :id => "#{c.id}" %></br>
+</br>
+  <linkto><%= c.title %></linkto></br>
     <%= link_to( image_tag(c.pic.url(:medium)),  :action => 'edit', :id => "#{c.id}")%></br>
 </div>
 <%end%>
@@ -28,7 +30,8 @@
 
 <% @done.each do |c| %>
 <div id="products">
-  <%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></br>
+</br>
+  <linkto><%= c.title%></linkto></br>
     <%= link_to( image_tag(c.pic.url(:medium)),  :action => 'show', :id => "#{c.id}")%></br>
 </div>
 <%end%>

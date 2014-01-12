@@ -1,18 +1,73 @@
-<h1>Exchange For Good_Edit</h1>
-<%= form_for @event, :url => {:action => 'update', :id => @event } do |f| %>
-Title: </br>
-    <%= f.text_field :title %>
-</br></br>
-Category: 
-<%= f.select :cate, [['clothes','1'],['shoes','2'],['3C','3']] %>
-</br></br>
-<p>
-     <b> Upload picture: </b><br/>
-    <%= f.file_field :pic %></b><br/>
-  </p>
-Discription: </br>
-    <%= f.text_area :discription, size: "55x10" %>
+<h1>Exchange For Good_New</h1></br></br>
 
-    <%= f.submit "Update" %>
-</br></br>
+
+<%= form_for @event , :url => { :controller => 'homepage', :action => 'update' } do |f| %>
+
+<% if @event.errors.any? %>
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+      <li style="color: red"><%= msg %></li>
+      <% end %>
+      </ul>
 <% end %>
+
+
+<fieldset>
+<legend><h2>Product Information</h2></legend>
+
+
+</br><b><%= f.label 'Product name :' %></b>
+<%= f.text_field :title %> </br></br>
+
+
+<b> <%= f.label 'Category :' %></b>  
+<%= f.select :cate, [['clothes','1'],['shoes','2'],['3C','3']] %>
+</br>
+
+<b><%= f.label 'Product Condition :' %></b>
+<%= f.select :condition, [['new','1'],['pre-owned','2']] %>
+</br>
+
+
+<p>
+<b> <%= f.label 'Upload picture :' %> </b>
+<%= f.file_field :pic %></b><br/>
+</p>
+
+
+<b> <%= f.label 'Discription :' %></b> 
+ <%= f.text_area :discription, size: "5x5" %> </br></br>
+</fieldset>
+
+
+
+<fieldset>
+<legend><h2>How To Get It</h2></legend>
+</br><b><%= f.label 'Activity name :' %></b>
+<%= f.text_field :atitle %> </br></br>
+
+</br><b><%= f.label 'Date :' %></b>
+<%= f.text_field :date %> </br></br>
+
+</br><b><%= f.label 'Time :' %></b>
+<%= f.text_field :time %> </br></br>
+
+</br><b><%= f.label 'Address :' %></b>
+<%= f.text_field :address %> </br></br>
+
+</br><b><%= f.label 'Phone :' %></b>
+<%= f.text_field :phone %> </br></br>
+
+<b> <%= f.label 'Detail :' %></b> 
+ <%= f.text_area :adescription, size: "5x5" %> </br></br>
+</fieldset>
+
+<input type="reset" value="Reset"> </br><%= f.submit "Update" %></br>
+
+<%= f.hidden_field :user_id, :value=>current_user.id %>
+
+
+<% end %>
+
+
+

@@ -12,7 +12,7 @@
                 
                 geocoder.getLatLng(address, function(point) {
                         if (!point) {
-                          alert('Google Maps 找不到該地址，無法顯示地圖！'); //如果Google Maps無法顯示該地址的警示文字
+                          alert('Google Maps can not find the adderss！'); //如果Google Maps無法顯示該地址的警示文字
                         } else {
                           map.setCenter(point, 13);
                           var marker = new GMarker(point);
@@ -27,27 +27,27 @@
 
 <body onload="load()" onunload="GUnload()">
 
-<h1>Things To do_New</h1></br></br>
 
 <%= form_for @event , :url => { :controller => 'account', :action => 'update' } do |f| %>
 
 
-
+</br></br>
+<div align="center">
 <fieldset>
 <legend><h2>Activity Information</h2></legend>
 
-<b> <%= f.label 'Activity Name :' %> </b> <%= @event.atitle %></br></br>
-<b> <%= f.label 'Date :' %> </b> <%= @event.date %></br></br>
-<b> <%= f.label 'Time :' %> </b> <%= @event.time %></br></br>
+<b> <%= f.label 'Activity Name :' %> </b> <otitle><%= @event.atitle %></otitle></br></br>
+<b> <%= f.label 'Date :' %> </b> <otitle><%= @event.date %></otitle></br></br>
+<b> <%= f.label 'Time :' %> </b> <otitle><%= @event.time %></otitle></br></br>
 
-<b> <%= f.label 'Address :' %> </b> <%= @event.address %></br></br>
+<b> <%= f.label 'Address :' %> </b> <otitle><%= @event.address %></otitle></br></br>
 <div align="center" >
 <div id="map" style="width: 400px; height: 300px"></div></br></br>
 </div>
 
 
-<b> <%= f.label 'Phone :' %> </b><%= @event.phone %></br></br>
-Detail :</br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
+<b> <%= f.label 'Phone :' %> </b><otitle><%= @event.phone %></otitle></br></br>
+<%= f.label 'Detail :' %></br></br> <fieldset><otitle><%= @event.adescription %></otitle></fieldset></br></br>
 </fieldset>
 
 
@@ -56,29 +56,30 @@ Detail :</br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
 <legend><h2>What You do</h2></legend>
 
 <b> <%= f.label 'Upload picture :' %> </b>
-<%= f.file_field :pic0 %></b><br/>
+<%= f.file_field :pic0 %></b><br/><br/>
 
-<b> <%= f.label '心得 :' %> </b><br/>
-<%= f.text_area :feedback%><br/><br/>
-
+<b> <%= f.label 'What you have learned :' %> </b>
+<div align="center">
+</otitle><%= f.text_area :feedback%></otitle><br/><br/>
+</div>
 <fieldset>
 <legend><h2>Delivering Information</h2></legend>
 
 <b> <%= f.label 'Name :' %> </b>
-<%= f.text_field :dname %> </br></br>
+<otitle><%= f.text_field :dname %> </otitle></br></br>
 
 <b> <%= f.label 'Phone :' %> </b>
-<%= f.text_field :dphone %> </br></br>
+<otitle><%= f.text_field :dphone %> </otitle></br></br>
 
 <b> <%= f.label 'Address :' %> </b>
-<%= f.text_field :daddr %> </br></br>
+<otitle><%= f.text_field :daddr %> </otitle></br></br>
 
 
 </fieldset>
 
 
 </fieldset>
-
+</div>
 
 
 

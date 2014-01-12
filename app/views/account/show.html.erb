@@ -1,4 +1,3 @@
-
 <div align= "center" >
 <fieldset>
 <div align= "center" ><legend><h2>Result</h2></legend></div>
@@ -7,21 +6,27 @@
 
 
 <% if @event.pass == nil %>
-Waiting For Reply
+<%= image_tag("wait.png") %>
 <% end %>
 
 <%if @event.pass == "yes" %>
-You got it! Thanks for your hardwork.</br>
-<label> Feedback :</label></br>
-<%= @event.ownerfeedback %></br></br>
-<p><%= link_to 'Try Another one', :controller => 'homepage' ,:action => 'index' %></p></br>
+<%= image_tag("thank.png") %></br>
+<otitle><label> Feedback :</label></otitle></br>
+<feedback><%= @event.ownerfeedback %></feedback></br></br>
+
+
+<p><%= link_to image_tag("tryanotherone.png"), :controller => 'homepage' ,:action => 'index' %></p></br>
 <% end %>
 
 <% if @event.pass == "no" %>
-I'm Sorry, You can do better.</br>
-<label> Feedback :</label></br>
-<%= @event.ownerfeedback %></br></br>
-<p><%= link_to 'Try Another one', :controller => 'homepage' ,:action => 'index' %></p></br>
+<otitle>I'm Sorry, You can do better.</otitle></br>
+<otitle><label> Feedback :</otitle></label></br>
+<feedback><%= @event.ownerfeedback %></feedback></br></br>
+
+
+<%= image_tag("tryanotherone.png") %>
+<%= link_to 'Try Another one', :controller => 'homepage' ,:action => 'index' %></br>
+
 <% end %>
 
 

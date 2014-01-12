@@ -26,18 +26,16 @@
 
 <ul>
 
-<% if @events.title == "no" %>
 
 <% @events.each do |c| %> 
 <div id="products">
     <br>
-   <span><%= link_to "#{c.title}", :action => 'show', :id => "#{c.id}" %></span></br>
+   <link><%= c.title %></link></br>
     <li><%= link_to( image_tag(c.pic.url(:medium)), :action => 'show', :id => "#{c.id}")%></br></li>
    How to get it? </br>
-    <%= c.atitle%>
-
+   <act> <%= c.atitle%></act>
 </div>
- <% end%> 	
+
  <% end%> 	
 
 

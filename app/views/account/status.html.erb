@@ -12,12 +12,12 @@
                 
                 geocoder.getLatLng(address, function(point) {
                         if (!point) {
-                          alert('Google Maps 找不到該地址，無法顯示地圖！'); //如果Google Maps無法顯示該地址的警示文字
+                          alert('Google Maps can not find the address！'); //如果Google Maps無法顯示該地址的警示文字
                         } else {
                           map.setCenter(point, 13);
                           var marker = new GMarker(point);
                           map.addOverlay(marker);
-                          marker.openInfoWindowHtml("在這裡輸入要顯示在對話框的文字");
+                          marker.openInfoWindowHtml("Destination");
                         }
                   });
       }
@@ -27,13 +27,14 @@
 
 <body onload="load()" onunload="GUnload()">
 
-
+</br></br>
+<div align="center">
 <fieldset><legend><h2>Product Information</h2></legend>
-Product name: <%= @event.title %></br></br>
+<otitle>Product name: </otitle><rtitle><%= @event.title %></rtitle></br></br>
 
-Owner: <%= @event.user.name %></br></br>
+<otitle>Owner: </otitle><rtitle><%= @event.user.name %></rtitle></br></br>
 
-Category :
+<otitle>Category :</otitle><rtitle>
 <% case @event.cate %>
 <% when 1 %>
 <%= "Clothes" %>
@@ -41,16 +42,16 @@ Category :
 <%= "shoes" %>
 <% when 3 %>
 <%= "3C" %>
-<% end %>
+<% end %></rtitle>
 </br></br>
 
-Condition :
+<otitle>Condition :</otitle><rtitle>
 <% if @event.condition==1 %>
 <%= "New" %>
 <% else %>
 <%= "Pre-owned" %>
 <% end %>
-</br></br>
+</rtitle></br></br>
 
 <%= image_tag @event.pic.url(:medium) %>
 </br></br>
@@ -58,7 +59,7 @@ Condition :
 
 
 
-Description: <%= simple_format(@event.discription) %></br>
+<otitle> Description:</otitle><rtitle> <%= simple_format(@event.discription) %></rtitle></br>
 </fieldset>
 
 
@@ -67,37 +68,37 @@ Description: <%= simple_format(@event.discription) %></br>
 <fieldset>
 <legend><h2>How To Get It</h2></legend>
 
-Activity name : <%= @event.atitle %></br></br>
-Date : <%= @event.date %></br></br>
-Time : <%= @event.time %></br></br>
+<otitle>Activity name :</otitle><rtitle> <%= @event.atitle %></rtitle></br></br>
+<otitle>Date :</otitle> <rtitle><%= @event.date %></rtitle></br></br>
+<otitle>Time :</otitle> <rtitle><%= @event.time %></rtitle></br></br>
 
-Address : <%= @event.address %></br></br>
+<otitle>Address :</otitle> <rtitle><%= @event.address %></rtitle></br></br>
 <div align="center" >
-
+<div id="map" style="width: 400px; height: 300px"></div></br>
 </div>
 
 
-Phone : <%= @event.phone %></br></br>
-Detail :</br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
+<otitle>Phone :</otitle><rtitle> <%= @event.phone %></rtitle></br></br>
+<otitle>Detail :</otitle></br></br> <fieldset><rtitle><%= @event.adescription %></rtitle></fieldset></br></br>
 
 
-Status : 
-<% if @event.done == nil %>
+<otitle>Status : </otitle>
+<statustitle><% if @event.done == nil %>
      <% if @event.check == nil %>
-                   <%= "沒人選" %>
+                   <%= "Have not been chosen" %>
      <% else  %>
-                   <%= "尚未完成" %>
+                   <%= "Unfinished" %>
      <%end%>
 <% else  %>
-<%= "完成" %></br>
+<%= "Finish" %></statustitle></br>
 <%= image_tag @event.pic0.url(:medium) %></br></br>
-心得感想 : <%= @event.feedback %></br></br>
+<otitle>What you have learned : </otitle></br><rtitle><%= @event.feedback %></rtitle></br></br>
 <fieldset>
 <legend><h2>Delivering Information</h2></legend>
 
-Name : <%= @event.dname %></br>
-Phone : <%= @event.dphone %></br>
-Address : <%= @event.daddr %></br>
+<otitle>Name :</otitle><delivertitle> <%= @event.dname %></delivertitle></br>
+<otitle>Phone : </otitle><delivertitle><%= @event.dphone %></delivertitle></br>
+<otitle>Address : </otitle><delivertitle><%= @event.daddr %></delivertitle></br>
 
 </fieldset></br></br>
 
@@ -105,28 +106,32 @@ Address : <%= @event.daddr %></br>
 
 <%= form_for @event , :url => { :controller => 'account', :action => 'pass' , :id =>@event.id} do |f| %>
 
-  <%= f.radio_button :pass, "yes" %>Pass
-  <%= f.radio_button :pass, "no" %>Fail</b>  
+  <%= f.radio_button :pass, "yes" %><statustitle>Pass</statustitle>
+  <%= f.radio_button :pass, "no" %><statustitle>Fail</statustitle></b>  
 
 
 <b> <%= f.label 'Feedback :' %> </b>
 <%= f.text_area :ownerfeedback %><br/><br/>
+</fieldset>
+
+</div>
 
 <%= f.submit "Submit", :confirm => 'Are you sure?' %></br>
 <%end%>
 
 <%end%>
+<%= button_to 'Back',:action => 'index' %>
 
 
 
 
-</fieldset>
 
 
 
 
 
-<p><%= button_to 'Back to Account',:action => 'index' %></p>
+
+
 
 
 </body>

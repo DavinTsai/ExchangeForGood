@@ -89,40 +89,97 @@ legendshow{
 	}
 
 
-ttitle{
-font-family: impact, sans-serif;
-color: #64ADDE;
-background-color: #F7FF82;
-font-size: 25px;
-font-weight: bold;
-text-align: center;
-letter-spacing: 0.4pt;
-word-spacing: 1.4pt;
-box-shadow:4px 4px 8px #666;
-text-decoration: underline;
-}
+fieldsetedit {
+		
+	text-align: center;	
+	position:relative;
+	padding:10px;
+	margin-bottom:10px;
+	width: 1000px;
+	border-radius: 10px;
+	box-shadow:3px 3px 10px #666;
+	display: inline-block;
+	vertical-align: top;
+	}
+
+
+
 
 otitle{
 font-family: impact, sans-serif;
 color: #FFFFFF;
-background-color: #CC5252;
-font-size: 24px;
+font-size: 18px;
 font-weight: bold;
 text-align: center;
 letter-spacing: 0.4pt;
 word-spacing: 1.4pt;
-box-shadow:2px 2px 6px #faebd7;
+
 }
 
 
 rtitle{
 box-shadow:4px 4px 8px #faebd7;
 font-family: 'lucida sans unicode', 'lucida grande', sans-serif;
-font-size: 18px;
+font-size: 14px;
 letter-spacing: 1.4pt;
 word-spacing: -1.8pt;
 line-height: 0.9;
 font-weight: bold;
+color: #FFFF77;
 }
 
+statustitle{
+
+font-family: impact, sans-serif;
+color: 	#FF0000;
+font-size: 30px;
+font-weight: bold;
+letter-spacing: 0.4pt;
+word-spacing: 1.4pt;
+}
+
+delivertitle{
+
+font-family: impact, sans-serif;
+color: 	#77FF00;
+font-size: 30px;
+font-weight: bold;
+letter-spacing: 0.4pt;
+word-spacing: 1.4pt;
+}
+
+
+
+act{
+
+font-family: impact, sans-serif;
+color: 	#FFFFFF;
+font-size: 16px;
+font-weight: bold;
+letter-spacing: 0.4pt;
+word-spacing: 1.4pt;
+}
+
+linkto{
+
+font-family: impact, sans-serif;
+color: 	#0066FF;
+font-size: 25px;
+font-weight: bold;
+letter-spacing: 0.4pt;
+word-spacing: 1.4pt;
+}
+
+
+
+
+feedback{
+
+font-family: impact, sans-serif;
+color: 	#0066FF;
+font-size: 16px;
+font-weight: bold;
+letter-spacing: 0.4pt;
+word-spacing: 1.4pt;
+}
 
