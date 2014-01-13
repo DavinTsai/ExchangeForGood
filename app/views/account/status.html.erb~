@@ -115,16 +115,12 @@
 </fieldset>
 
 </div>
-<%= link_to( image_tag("back.png"),:action => 'index' %>
+
 <%= f.submit "Submit", :confirm => 'Are you sure?' %></br>
 <%end%>
 
 <%end%>
-
-
-
-
-
+<%= button_to 'Back',:action => 'index' %>
 
 
 

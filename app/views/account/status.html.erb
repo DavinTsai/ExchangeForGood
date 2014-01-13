@@ -27,7 +27,8 @@
 
 <body onload="load()" onunload="GUnload()">
 
-</br></br>
+</br>
+<div align="center"><%= image_tag("exchange.png") %></div>
 <div align="center">
 <fieldset><legend><h2>Product Information</h2></legend>
 <otitle>Product name: </otitle><rtitle><%= @event.title %></rtitle></br></br>
@@ -121,14 +122,6 @@
 
 <%end%>
 <%= button_to 'Back',:action => 'index' %>
-
-
-
-
-
-
-
-
 
 
 

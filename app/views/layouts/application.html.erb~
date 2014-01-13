@@ -18,12 +18,12 @@
 				<li><%= link_to 'Homepage', :controller => "homepage",:action => 'index' %></li>
 				<li><%= link_to 'Upload products', new_homepage_path %></li>
 				<li><%= link_to 'My account', :controller => "account",:action => 'index' %></li>
-				<li><%= link_to 'About us', :controller => "homepage" ,:action => 'introduce' ,:method=>:get%></li>
+				<li><%= link_to 'About us', :controller => "homepage" ,:action => 'introduce' %></li>
     <li><%= link_to('Log out', destroy_user_session_path, :method => :delete) %></li>
     <li><%= link_to('Modify password', edit_registration_path(:user)) %></li>
   <% else %>
     <li><%= link_to 'Homepage',:action => 'index' %></li>
-    <li><a href="#" accesskey="4" title="">About Us</a></li>
+    <li><%= link_to 'About us', :controller => "homepage" ,:action => 'introduce' %></li>
     <li><%= link_to('sign up', new_registration_path(:user)) %> </li>
     <li><%= link_to('log in', new_session_path(:user)) %></li>
   <% end%>

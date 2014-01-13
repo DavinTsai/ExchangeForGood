@@ -19,13 +19,13 @@
 <% end %>
 
 <% if @event.pass == "no" %>
-<otitle>I'm Sorry, You can do better.</otitle></br>
+
+<%= image_tag("sorry.png") %></br>
 <otitle><label> Feedback :</otitle></label></br>
 <feedback><%= @event.ownerfeedback %></feedback></br></br>
 
 
-<%= image_tag("tryanotherone.png") %>
-<%= link_to 'Try Another one', :controller => 'homepage' ,:action => 'index' %></br>
+<p><%= link_to image_tag("tryanotherone.png"), :controller => 'homepage' ,:action => 'index' %></p></br>
 
 <% end %>
 

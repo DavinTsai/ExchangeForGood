@@ -30,6 +30,7 @@
 
 </br></br></br>
 <div align="center">
+<%= image_tag("exchange.png") %>
 <fieldsetshow><legendshow><h2>Product Information</h2></legendshow>
 <otitle>Product name: </otitle><rtitle><%= @event.title %></rtitle></br></br>
 
@@ -81,7 +82,7 @@
 <otitle>Address : </otitle><rtitle><%= @event.address %></rtitle></br></br>
 <div align="center" > <div id="map" style="width: 400px; height: 300px"></div></br></br> </div>
 <otitle>Phone :</otitle> <rtitle><%= @event.phone %></rtitle></br></br>
-<otitle>Detail :</otitle></br></br> <fieldset><%= @event.adescription %></fieldset></br></br>
+<otitle>Detail :</otitle></br></br> <fieldset><rtitle><%= @event.adescription %></rtitle></fieldset></br></br>
 </fieldsetshow>
 </div>
 
